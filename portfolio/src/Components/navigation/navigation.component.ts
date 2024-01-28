@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -5,14 +6,14 @@ import { Component } from '@angular/core';
     standalone: true,
     templateUrl: './navigation.component.html',
     styleUrl: './navigation.component.css',
-    imports: []
+    imports: [CommonModule]
 })
 export class NavigationComponent {
 
-mobileView: boolean = true;
+isMobileView: boolean = false;
 
 toggleMobileView() {
-    this.mobileView = !this.mobileView;
+    this.isMobileView = !this.isMobileView;
     }
     
 
