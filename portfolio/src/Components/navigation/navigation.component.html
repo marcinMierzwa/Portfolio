@@ -1,0 +1,60 @@
+<nav class="w-full h-full flex justify-between items-center">
+  <!-- logo -->
+  <div class="px-2"><img src="" alt="logo"/></div>
+  <!-- desktop- -->
+  <ul class="flex invisible md:visible">
+    <li><a class="" href="">Home</a></li>
+    <li><a href="">About</a></li>
+    <li><a href="">Projects</a></li>
+    <li><a href="">Contact</a></li>
+  </ul>
+
+    <!-- button open-close-mobile-menu-->
+  <div class="md:invisible absolute top-0 right-0 px-4 py-2 cursor-pointer z-10 text-[#f3f3f3]"
+  (click)="toggleMobileView()"
+  >
+    <!-- hamburger -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.2"
+      stroke="currentColor"
+      class="w-14 h-14 absolute"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+      />
+    </svg>
+
+    <!-- X-close -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.2"
+      stroke="currentColor"
+      class="w-14 h-14 "
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M6 18 18 6M6 6l12 12"
+      />
+    </svg>
+  </div>
+
+  <!-- mobile -->
+  @if(mobileView) {
+    <ul class="flex flex-col absolute top-0 left-0 w-full h-screen bg-[#111]/[90%] backdrop-blur-[1px] justify-center items-center md:invisible text-[2.5rem] font-semibold">
+      <li class="p-5"><a href="">Home</a></li>
+      <li class="p-5"><a href="">About</a></li>
+      <li class="p-5"><a href="">Projects</a></li>
+      <li class="p-5"><a href="">Contact</a></li>
+    </ul>
+        }
+
+</nav>
+
