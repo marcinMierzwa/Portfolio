@@ -9,10 +9,29 @@
 @layer base {
     body {
         @apply font-[Raleway];
+        @apply bg-[#24292f];
     }
     li {
-        @apply px-4;
+        @apply mx-4;
+        @apply xl:mx-8;
+        @apply p-1;
         @apply cursor-pointer;
+        position: relative;
 
     }
+    a::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        bottom: 0;
+        background-color: #db2777;
+        transform: scale(0,1);
+        transition: transform 0.3s ease-in-out;
+    }
+    a:hover::after{
+        transform: scale(1,1);
+    }
+
 }
