@@ -1,6 +1,13 @@
-<nav class="navigation mt-2 flex justify-between items-center w-full h-full">
+<nav class="navigation flex justify-between items-center w-full h-full p-4">
   <!-- logo -->
-  <div class="navigation-logo p-4 md:p-3 md:ms-3 w-20 z-50"><img class="" src="/assets/logo-img.png" alt="logo" /></div>
+  <div class="navigation-logo-container z-50">
+    <div class="navigation-logo">
+      <img class="h-14 md:h-0" src="/assets/logoMobile.png" alt="logo" />
+    </div>
+    <div class="navigation-logo">
+      <img class="h-0 md:h-14" src="/assets/logoDesktop.png" alt="logo" />
+    </div>
+  </div>
   <!-- desktop- -->
   <ul class="navigation-list flex invisible w-0 md:w-auto md:visible">
     <li><a href="">Home</a></li>
@@ -10,45 +17,45 @@
   </ul>
 
   <!-- button open-close-mobile-menu-->
-    <div
-      class="navigation-icon-container cursor-pointer relative z-50 me-4 text-[#f3f3f3] md:invisible"
-      (click)="toggleMobileView()"
+  <div
+    class="navigation-icon-container cursor-pointer relative z-50 me-4 text-[#f3f3f3] md:invisible hover:scale-125"
+    (click)="toggleMobileView()"
+  >
+    <!-- hamburger -->
+    @if(!isMobileView){
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.2"
+      stroke="currentColor"
+      class="navigation-icon w-10 h-10 md:invisible"
     >
-      <!-- hamburger -->
-      @if(!isMobileView){
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.2"
-        stroke="currentColor"
-        class="navigation-icon w-10 h-10 md:invisible"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-        />
-      </svg>
-      }
-      <!-- X-close -->
-      @if(isMobileView){
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.2"
-        stroke="currentColor"
-        class="navigation-icon w-10 h-10 md:invisible"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M6 18 18 6M6 6l12 12"
-        />
-      </svg>
-      }
-    </div>
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M5,8H19a1,1,0,0,0,0-2H5A1,1,0,0,0,5,8Zm16,3H3a1,1,0,0,0,0,2H21a1,1,0,0,0,0-2Zm-2,5H5a1,1,0,0,0,0,2H19a1,1,0,0,0,0-2Z"
+      />
+    </svg>
+    }
+    <!-- X-close -->
+    @if(isMobileView){
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.6"
+      stroke="currentColor"
+      class="navigation-icon w-12 h-12 md:invisible"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z"
+      />
+    </svg>
+    }
+  </div>
 
   <!-- mobile -->
   <div
@@ -57,23 +64,20 @@
   ></div>
   <ul
     class="navigation navigation-list flex flex-col fixed bottom-0 right-0 h-[100%] w-full bg-[#111]/[87%] rounded-s-3xl justify-center items-center md:invisible text-[2.2rem] sm:text-[2.5rem] font-semibold duration-500 ease-in-out z-100"
-    [ngClass]="
-      isMobileView
-        ? 'translate-x-[2%]'
-        : 'translate-x-[98%]'
-    "
+    [ngClass]="isMobileView ? 'translate-x-[2%]' : 'translate-x-[98%]'"
   >
-    <li class="my-5 -translate-x-[2%] ">
+    <li class="my-5 -translate-x-[2%]">
       <a href="">Home</a>
     </li>
-    <li class="my-5 -translate-x-[2%] ">
+    <li class="my-5 -translate-x-[2%]">
       <a href="">About</a>
     </li>
-    <li class="my-5 -translate-x-[2%] ">
+    <li class="my-5 -translate-x-[2%]">
       <a href="">Projects</a>
     </li>
-    <li class="my-5 -translate-x-[2%] ">
+    <li class="my-5 -translate-x-[2%]">
       <a href="">Contact</a>
     </li>
   </ul>
 </nav>
+

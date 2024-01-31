@@ -4,7 +4,7 @@
 .navigation-mobile{
     box-shadow: inset 0 -1px 0 0 hsla(0, 0%, 100%, 0.1) ;
 } */
-.navigation-icon-container::after{
+/* .navigation-icon-container::after{
     content: '';
     position: absolute;
     width: 100%;
@@ -18,4 +18,4 @@
 }
 .navigation-icon-container:hover::after{
     transform: scale(1,1);
-}
+} */
