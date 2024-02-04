@@ -10,7 +10,10 @@
     body {
         @apply font-[Raleway];
         @apply bg-[#24292f];
+
     }
+    }
+
     li {
         @apply mx-4;
         @apply xl:mx-8;
@@ -19,7 +22,7 @@
         position: relative;
 
     }
-    a::after{
+    .link-desktop::after{
         content: '';
         position: absolute;
         width: 100%;
@@ -30,8 +33,7 @@
         transform: scale(0,1);
         transition: transform 0.3s ease-in-out;
     }
-    a:hover::after{
+    .link-desktop:hover::after{
         transform: scale(1,1);
     }
 
-}
