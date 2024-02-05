@@ -1,4 +1,4 @@
-<nav class="navigation flex justify-between items-center w-full h-full p-4 pt-0">
+<nav class="navigation flex justify-between items-center w-full h-full">
   <!-- logo -->
     <div class="navigation-logo z-30 opacity-85">
       <img class="h-14" src="/assets/logoMobile.png" alt="logo"/>
@@ -58,7 +58,7 @@
     [ngClass]="isMobileView ? 'opacity-100' : 'opacity-0'"
   ></div>
   <ul
-    class="navigation navigation-list flex flex-col fixed z-20 bottom-0 right-0 h-full w-full bg-[#111]/[70%] rounded-s-3xl justify-center items-center md:invisible text-[2.2rem] sm:text-[2.5rem] font-semibold duration-500 ease-in-out z-100"
+    class="navigation navigation-list flex flex-col fixed z-20 bottom-0 right-0 h-full w-full bg-[#111]/[80%] justify-center items-center md:invisible text-[2.2rem] sm:text-[2.5rem] font-bold duration-500 ease-in-out z-100"
     [ngClass]="isMobileView ? 'translate-x-[0]' : 'translate-x-[100%]'"
   >
     <li class="my-5">

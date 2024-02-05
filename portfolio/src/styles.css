@@ -1,39 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
-    body {
-        @apply font-[Raleway];
-        @apply bg-[#24292f];
+  body {
+    @apply font-[Raleway];
+    @apply bg-[#24292f];
+  }
+}
 
-    }
-    }
-
-    li {
-        @apply mx-4;
-        @apply xl:mx-8;
-        @apply p-1;
-        @apply cursor-pointer;
-        position: relative;
-
-    }
-    .link-desktop::after{
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        left: 0;
-        bottom: 0;
-        background-color: #db2777;
-        transform: scale(0,1);
-        transition: transform 0.3s ease-in-out;
-    }
-    .link-desktop:hover::after{
-        transform: scale(1,1);
-    }
-
+li {
+  @apply mx-4;
+  @apply xl:mx-8;
+  @apply p-1;
+  @apply cursor-pointer;
+  position: relative;
+}
+.link-desktop::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: #db2777;
+  transform: scale(0, 1);
+  transition: transform 0.3s ease-in-out;
+}
+.link-desktop:hover::after {
+  transform: scale(1, 1);
+}
