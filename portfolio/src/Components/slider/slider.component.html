@@ -1,0 +1,24 @@
+
+
+<div class="slider flex items-center overflow-hidden relative">
+  <ul
+    class="slider-inner-slider list-none flex items-center flex-shrink-0 h-[300px] opacity-75 gap-6 me-6 w-[1970px]"
+  >
+    @for (project of work$ | async ; track project.id ) {
+    <li class="flex items-center m-0">
+      <img class="rounded-lg" src="{{ project.src }}" alt="project image" />
+    </li>
+    }
+  </ul>
+
+  <ul
+    class="slider-inner-slider list-none flex items-center flex-shrink-0 h-[300px] opacity-75 gap-6 me-6 w-[1970px] "
+  >
+    @for (project of work$ | async ; track project.id ) {
+
+    <li class="flex items-center m-0">
+      <img class="rounded-lg" src="{{ project.src }}" alt="project image" />
+    </li>
+    }
+  </ul>
+</div>

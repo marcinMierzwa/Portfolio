@@ -1,14 +1,14 @@
 <div
-  class="flex flex-col justify-between xl:w-[90%] mx-auto h-[100svh] md:h-screen overflow-hidden text-white"
+  class="flex flex-col justify-between h-[100svh] md:h-screen text-white overflow-hidden max-w-[1600px] mx-auto"
 >
-  <header class="basis-[7%]">
+  <header class="h-[7%]">
     <app-navigation />
   </header>
 
-  <section class="basis-[91%] flex justify-center items-center w-full">
-    <!-- <div><app-side-bar/></div> -->
-    <div class="w-full h-full"><router-outlet /></div>
+  <section class="h-[93%] ">
+    <router-outlet />
   </section>
-  <app-bottom-mobile-navi/>
-  <app-footer class="h-0 md:h-[20px] invisible md:visible" />
+
+  <app-bottom-mobile-navi class="md:h-0" />
+  <app-footer class="h-0 md:h-auto invisible md:visible" />
 </div>

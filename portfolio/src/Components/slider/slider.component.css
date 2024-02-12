@@ -1,0 +1,40 @@
+.slider-inner-slider{
+  animation: 90s slide infinite linear; 
+}
+
+@keyframes slide {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(calc(-100% - 24px));
+    }
+}
+.slider::before {
+  content: "";
+  width: 5%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  z-index: 2;
+}
+
+.slider::after {
+  content: "";
+  width: 5%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0%;
+  background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  z-index: 2;
+}
+
+.slider:hover .slider-inner-slider{
+  animation-play-state: paused;
+}
+
+
+
