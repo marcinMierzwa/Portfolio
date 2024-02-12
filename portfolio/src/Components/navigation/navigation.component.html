@@ -1,19 +1,21 @@
-<nav class="navigation flex justify-between items-center w-full h-full ">
+<nav class="navigation flex justify-between items-center w-full h-full p-3">
   <!-- logo -->
-    <div class="navigation-logo z-30 opacity-85">
-      <img class="h-12 ms-2" src="/assets/logoMobile.png" alt="logo"/>
-    </div>
+  <div class="navigation-logo z-30 opacity-85 ms-2 xl:ms-3 mt-2">
+    <img class="h-12 xl:h-14" src="/assets/logoMobile.png" alt="logo" />
+  </div>
   <!-- desktop- -->
-  <ul class="navigation-list flex invisible w-0 md:w-auto md:visible">
-    <li><a class="link-desktop" href="">Home</a></li>
-    <li><a class="link-desktop" href="">About</a></li>
-    <li><a class="link-desktop" href="">Projects</a></li>
-    <li><a class="link-desktop" href="">Contact</a></li>
-  </ul>
+  <div class="hidden md:block">
+    <ul class="navigation-list font-medium xl:text-lg tracking-wide flex">
+      <li><a class="link-desktop" href="">Home</a></li>
+      <li><a class="link-desktop" href="">About Me</a></li>
+      <li><a class="link-desktop" href="">Porfolio</a></li>
+      <li><a class="link-desktop" href="">Contact</a></li>
+    </ul>
+  </div>
 
   <!-- button open-close-mobile-menu-->
   <div
-    class="navigation-icon-container cursor-pointer relative z-50 text-[#f3f3f3] md:invisible hover:scale-125 duration-200 transition-all ease-in-out"
+    class="navigation-icon-container cursor-pointer relative z-30 text-[#f3f3f3] md:hidden hover:scale-125 duration-200 transition-all ease-in-out"
     (click)="toggleMobileView()"
   >
     <!-- hamburger -->
@@ -24,7 +26,7 @@
       viewBox="0 0 24 24"
       stroke-width="1.2"
       stroke="currentColor"
-      class="navigation-icon w-10 h-10 md:invisible"
+      class="navigation-icon w-10 h-10 md:hidden"
     >
       <path
         stroke-linecap="round"
@@ -41,7 +43,7 @@
       viewBox="0 0 24 24"
       stroke-width="1.6"
       stroke="currentColor"
-      class="navigation-icon w-12 h-12 md:invisible"
+      class="navigation-icon w-12 h-12 md:hidden"
     >
       <path
         stroke-linecap="round"
@@ -52,27 +54,29 @@
     }
   </div>
 
-  <!-- mobile -->
-  <div
-    class="absolute bottom-0 left-0 backdrop-blur-[3px] z-10 bg-transparent w-full h-[90%] duration-500 transition-opacity md:invisible"
+  <!-- <div
+    class="absolute bottom-0 left-0 backdrop-blur-[3px] z-10 bg-transparent w-full h-[90%] duration-500 transition-opacity md:hidden"
     [ngClass]="isMobileView ? 'opacity-100' : 'opacity-0'"
-  ></div>
-  <ul
-    class="navigation navigation-list flex flex-col fixed z-20 bottom-0 right-0 h-full w-full bg-[#111]/[80%] justify-center items-center md:invisible text-[2.2rem] sm:text-[2.5rem] font-bold duration-500 ease-in-out z-100"
-    [ngClass]="isMobileView ? 'translate-x-[0]' : 'translate-x-[100%]'"
-  >
-    <li class="my-5">
-      <a href="">Home</a>
-    </li>
-    <li class="my-5">
-      <a href="">About</a>
-    </li>
-    <li class="my-5">
-      <a href="">Projects</a>
-    </li>
-    <li class="my-5">
-      <a href="">Contact</a>
-    </li>
-  </ul>
+  ></div> -->
 </nav>
 
+
+  <!-- mobile Nav -->
+
+<ul
+  class="navigation-mobile navigation-list flex flex-col fixed z-20 bottom-0 right-0 h-full w-full bg-[#111]/[80%] justify-center items-center md:hidden text-[2.2rem] sm:text-[2.5rem] font-bold duration-500 ease-in-out z-100"
+  [ngClass]="isMobileView ? 'translate-x-[0]' : 'translate-x-[100%]'"
+>
+  <li class="my-5">
+    <a href="">Home</a>
+  </li>
+  <li class="my-5">
+    <a href="">About Me</a>
+  </li>
+  <li class="my-5">
+    <a href="">Portfolio</a>
+  </li>
+  <li class="my-5">
+    <a href="">Contact</a>
+  </li>
+</ul>
