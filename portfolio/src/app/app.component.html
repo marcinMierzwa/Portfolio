@@ -1,14 +1,15 @@
 <div
-  class="flex flex-col justify-between h-[100svh] md:h-screen text-white overflow-hidden max-w-[1600px] mx-auto"
+  class="wrapper flex flex-col justify-between h-[100svh] sm:max-h text-white"
 >
-  <header class="h-[7%]">
-    <app-navigation />
-  </header>
+  <div
+    class="wrapper-background -z-10 absolute inset-0 bg-cover bg-center opacity-40"
+  ></div>
 
-  <section class="h-[93%] ">
-    <router-outlet />
-  </section>
+  <app-navigation />
 
-  <app-bottom-mobile-navi class="md:hidden"/>
-  <app-footer class="hidden md:flex" />
+  <div  class="h-full"><router-outlet/></div>
+
+  <app-bottom-mobile-navi class="sm:hidden" />
+
+  <app-footer class="hidden lg:flex" />
 </div>

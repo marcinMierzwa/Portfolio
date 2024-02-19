@@ -1,24 +1,26 @@
 
 
-<div class="slider flex items-center overflow-hidden relative">
+<div class="slider flex items-center w-full overflow-hidden relative">
+  
+  
   <ul
-    class="slider-inner-slider list-none flex items-center flex-shrink-0 h-[300px] opacity-75 gap-6 me-6 w-[1970px]"
+    class="slider-inner-slider list-none flex items-center flex-shrink-0 opacity-75"
   >
     @for (project of work$ | async ; track project.id ) {
-    <li class="slider-inner-slider-container-image flex items-center m-0 cursor-auto">
+    <li class="slider-inner-slider-container-image flex items-center justify-center m-0 cursor-auto w-[180px] lg:w-[300px] max-h-[30vh] me-4">
       <img class="rounded-lg grayscale-[0.6] hover:grayscale-0 duration-1000" src="{{ project.src }}" alt="project image" />
     </li>
     }
   </ul>
 
   <ul
-    class="slider-inner-slider list-none flex items-center flex-shrink-0 h-[300px] opacity-75 gap-6 me-6 w-[1970px] "
+    class="slider-inner-slider list-none flex items-center flex-shrink-0 opacity-75"
   >
     @for (project of work$ | async ; track project.id ) {
-
-    <li class="flex items-center m-0">
-      <img class="rounded-lg" src="{{ project.src }}" alt="project image" />
+    <li class="slider-inner-slider-container-image flex items-center justify-center m-0 cursor-auto w-[180px] lg:w-[300px] me-4">
+      <img class="rounded-lg grayscale-[0.6]  hover:grayscale-0 duration-1000" src="{{ project.src }}" alt="project image" />
     </li>
     }
   </ul>
+
 </div>

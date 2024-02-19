@@ -1,20 +1,24 @@
-.home-backgroud {
-  background-image: url(/assets/business-work-area.jpg);
-  box-shadow: inset 0 0 40px 30px rgb(36, 41, 47), 0 0 40px 30px rgb(36, 41, 47);
+.home-heading{
+  font-size: clamp(2.7rem, 5vw, 6rem);
 }
-.home-backgroud::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  box-shadow: inset 0 0 15px 5px #24292f;
+.home-text{
+  font-size: clamp(1.1rem, 2.5vw, 2.5rem);
 }
+.home-text-slider{
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+
+
+
+
+
+
+
+
+
 .home-button{
-  box-shadow: 0 0 7px #db2777, 0 0 20px #24292f;
+  box-shadow: 0 0 5px #db2777, 0 0 20px #24292f;
   z-index: 1;
   overflow: hidden;
 }

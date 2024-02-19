@@ -32,7 +32,7 @@ export class DataService {
     {
       id:5,
       project:'portfolio',
-      src:'/assets/work/SpreadingWindows.png'
+      src:'/assets/work/portfolio.png'
     },
     {
       id:6,
