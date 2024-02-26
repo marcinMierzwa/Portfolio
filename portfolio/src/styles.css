@@ -8,18 +8,24 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+:root{
+  --main-bg-color: #24292f;
 }
 
 @layer base {
   body {
+    @apply text-gray-100;
     @apply font-[Raleway];
-    @apply bg-[#24292f];
+    @apply bg-[--main-bg-color];
     /* @apply bg-[rgb(36,41,47)]; */
-    .font-heading{
-      font-size: clamp(2.6rem, 5vw, 6rem);
-    }
-    
+     .subpage-main-heading{
+      font-size: clamp(2.3rem, 5vw, 6rem);
+    } 
+    .subpage-sub-heading{
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+    } 
+
 
   }
 }

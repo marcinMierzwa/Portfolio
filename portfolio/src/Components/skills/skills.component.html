@@ -1,0 +1,16 @@
+<div class="container flex flex-col">
+    <h1>Skills</h1>
+    <p>These are the technologies I've worked with.</p>
+
+    <ul class="flex flex-wrap bg-pink-300">
+        @for(skill of skills$ | async; track skill.id ){
+
+        <li class="">
+            <img src="{{ skill.src }}" alt="technology logo" class="h-auto max-w-full">
+            <p>{{ skill.skillName }}</p>
+        </li>
+    }
+    </ul>
+
+
+</div>

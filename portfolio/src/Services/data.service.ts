@@ -3,6 +3,8 @@ import { Observable, of } from 'rxjs';
 
 export type Work = {id:number, project:string, src: string};
 
+export type Skill = {id:number, skillName:string, src: string};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -41,9 +43,60 @@ export class DataService {
     }
 
   ]
-  private work$ = of(this.work) as Observable<Work[]>
 
-  get getWork(){
+  private skills: Skill[] = [
+    {
+      id: 1,
+      skillName: "html",
+      src:'/assets/skills/html.png'
+    },
+    {
+      id: 2,
+      skillName: "css",
+      src:'/assets/skills/css.png'
+    },
+    {
+      id: 3,
+      skillName: "javascript",
+      src:'/assets/skills/javascript.png'
+    },
+    {
+      id: 4,
+      skillName: "typescript",
+      src:'/assets/skills/typescript.png'
+    },
+    {
+      id: 5,
+      skillName: "angular",
+      src:'/assets/skills/angular.png'
+    },
+    {
+      id: 6,
+      skillName: "tailwind",
+      src:'/assets/skills/tailwind.png'
+    },
+    {
+      id: 7,
+      skillName: "bootstrap",
+      src:'/assets/skills/bootstrap.png'
+    },
+    {
+      id: 8,
+      skillName: "github",
+      src:'/assets/skills/github.png'
+    }
+  ]
+
+  private work$ = of(this.work) as Observable<Work[]>;
+
+  private skills$ =of(this.skills) as Observable<Skill[]>;
+
+  get getWork() {
     return this.work$
   }
+
+  get getSkills() {
+    return this.skills$
+  }
+  
 }

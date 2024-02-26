@@ -4,14 +4,9 @@
 .home-text-slider{
   font-size: clamp(1rem, 2vw, 1.5rem);
 }
-
-
-
-
-
-
-
-
+.home-font-heading{
+  font-size: clamp(2.7rem, 5vw, 6rem);
+}
 
 
 .home-button{

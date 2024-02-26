@@ -1,13 +1,14 @@
 <nav class="navigation flex justify-between items-center w-full px-2">
   <!-- logo -->
   <div class="navigation-logo z-30 opacity-85 ms-2 xl:ms-3 mt-2">
-    <img class="h-10 md:h-12" src="/assets/logoMobile.png" alt="logo" />
+    <img class="h-10 md:h-12 cursor-pointer" routerLink="home" src="/assets/logoMobile.png" alt="logo" />
   </div>
   <!-- desktop- -->
   <div class="hidden sm:block z-30">
     <ul class="navigation-list font-medium xl:text-lg tracking-wide flex">
-      <li><a class="link-desktop" href="">Home</a></li>
-      <li><a class="link-desktop" href="">About Me</a></li>
+      <li><a class="link-desktop" routerLink="home">Home</a></li>
+      <li><a class="link-desktop" routerLink="about">About Me</a></li>
+      <li><a class="link-desktop" routerLink="about">Skills</a></li>
       <li><a class="link-desktop" href="">Porfolio</a></li>
       <li><a class="link-desktop" href="">Contact</a></li>
     </ul>
@@ -60,31 +61,43 @@
   ></div> -->
 </nav>
 
+<!-- mobile Nav -->
+<div
+  class="flex flex-col justify-center items-center z-20 fixed bottom-0 right-0 h-full w-full bg-[#111]/[80%] sm:hidden text-[2rem] sm:text-[2.5rem] font-bold duration-500 ease-in-out"
+  [ngClass]="isMobileView ? 'translate-x-[0]' : 'translate-x-[100%]'"
+>
+  <ul class="navigation-mobile flex flex-col justify-center items-center" (click)="toggleMobileView()">
+    <li class="my-4">
+      <a class="border-b-2 border-pink-500 pb-2" routerLink="home">Home</a>
+    </li>
+    <li class="my-4">
+      <a class="border-b-2 border-pink-500 pb-2" routerLink="about">About Me</a>
+    </li>
+    <li class="my-4">
+      <a class="border-b-2 border-pink-500 pb-2" href="">Skills</a>
+    </li>
 
-  <!-- mobile Nav -->
-<div class="flex flex-col justify-center items-center z-20 fixed bottom-0 right-0 h-full w-full bg-[#111]/[80%] sm:hidden text-[2.2rem] sm:text-[2.5rem] font-bold duration-500 ease-in-out"
-[ngClass]="isMobileView ? 'translate-x-[0]' : 'translate-x-[100%]'"
->
-<ul
-  class="navigation-mobile flex flex-col justify-center items-center "
->
-  <li class="my-5">
-    <a class="border-b-2 border-pink-500 pb-2" href="">Home</a>
-  </li>
-  <li class="my-5">
-    <a class="border-b-2 border-pink-500 pb-2" href="">About Me</a>
-  </li>
-  <li class="my-5">
-    <a class="border-b-2 border-pink-500 pb-2" href="">Portfolio</a>
-  </li>
-  <li class="my-5">
-    <a class="border-b-2 border-pink-500 pb-2" href="">Contact</a>
-  </li>
-</ul>
-<div class="z-20 w-3/4 grid grid-cols-2 justify-center items-center mt-12 bg-slate-500 opacity-80">
-  <i class="fa-solid fa-envelope text-[30px] text-center w-full border py-3 text-pink-300 "></i>
-  <i class="fa-brands fa-github text-3xl text-center w-full border border-s-0 py-3 text-pink-300"></i>    
-  <i class="fa-brands fa-linkedin text-3xl text-center w-full border border-t-0 py-3 text-pink-300"></i> 
-  <i class="fa-brands fa-discord text-3xl text-center w-full border-b border-e py-3 text-pink-300"></i> 
-</div>
+    <li class="my-4">
+      <a class="border-b-2 border-pink-500 pb-2" href="">Portfolio</a>
+    </li>
+    <li class="my-4">
+      <a class="border-b-2 border-pink-500 pb-2" href="">Contact</a>
+    </li>
+  </ul>
+  <div
+    class="z-20 w-3/4 grid grid-cols-2 justify-center items-center mt-6 bg-slate-500 opacity-80"
+  >
+    <i
+      class="fa-solid fa-envelope text-[30px] text-center w-full border py-3 text-pink-300"
+    ></i>
+    <i
+      class="fa-brands fa-github text-3xl text-center w-full border border-s-0 py-3 text-pink-300"
+    ></i>
+    <i
+      class="fa-brands fa-linkedin text-3xl text-center w-full border border-t-0 py-3 text-pink-300"
+    ></i>
+    <i
+      class="fa-brands fa-discord text-3xl text-center w-full border-b border-e py-3 text-pink-300"
+    ></i>
+  </div>
 </div>
