@@ -1,5 +1,5 @@
 .skill-title{
-    font-size: clamp(0.65rem, 1.8vw, 1.2rem);
+    font-size: clamp(0.7rem, 1.8vw, 1rem);
 }
 
 /* .skill-container::after{
@@ -9,3 +9,7 @@
     position: absolute;
     inset: 1;
 } */
+
+.skill-container:hover>p {
+    transform: scale(100%);
+}
