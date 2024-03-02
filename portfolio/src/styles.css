@@ -9,7 +9,7 @@
   margin: 0;
   padding: 0;
 }
-:root{
+:root {
   --main-bg-color: #24292f;
 }
 
@@ -19,14 +19,6 @@
     @apply font-[Raleway];
     @apply bg-[--main-bg-color];
     /* @apply bg-[rgb(36,41,47)]; */
-     .subpage-main-heading{
-      font-size: clamp(2.3rem, 5vw, 6rem);
-    } 
-    .subpage-sub-heading{
-      font-size: clamp(1.2rem, 2vw, 2.2rem);
-    } 
-
-
   }
 }
 
@@ -50,4 +42,10 @@ li {
 }
 .link-desktop:hover::after {
   transform: scale(1, 1);
+}
+.subpage-main-heading {
+  font-size: clamp(2.3rem, 5vw, 6rem);
+}
+.subpage-sub-heading {
+  font-size: clamp(1.2rem, 2vw, 2.2rem);
 }

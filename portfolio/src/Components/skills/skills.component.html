@@ -1,5 +1,5 @@
 <div
-  class="h-full flex flex-col mt-20 sm:mt-0 sm:justify-center gap-6 lg:gap-12 px-10 sm:px-28"
+  class="h-full flex flex-col mt-20 sm:mt-0 sm:justify-center gap-8 lg:gap-12 py-2 px-10 sm:px-28"
 >
 
   <div class="space-y-2">
@@ -8,23 +8,23 @@
     >
       Skills
     </h1>
-    <p class="subpage-sub-heading text-yellow-100 font-medium lg:font-semibold">
+    <p class="subpage-sub-heading font-medium pe-5">
       These are the technologies I've worked with.
     </p>
     
   </div>
 
   <ul
-    class="w-full place-content-center grid grid-cols-2 sm:grid-cols-3 gap-y-4 sm:gap-4 lg:gap-10 sm:px-12 lg:px-22 2xl:px-44 mb-4"
+    class="w-full place-content-center grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4"
   >
     @for(skill of skills$ | async; track skill.id ){
 
-      <li class="skill-container flex flex-col place-items-center group relative
-         before:absolute before:w-full before:h-full before:shadow-md before:shadow-[#040c16] before:hover:scale-110 before:hover:shadow-lg before:hover:shadow-black before:duration-500 ">
+      <li class="skill-container w-full flex flex-col place-items-center group relative
+         before:absolute before:w-full before:h-full before:shadow-md before:shadow-[#040c16] before:hover:scale-105 before:hover:shadow-lg before:hover:shadow-black before:duration-500 ">
 
 
             <img src="{{ skill.src }}" alt="technology logo" class="size-10 sm:size-16 mt-4 opacity-85">
-            <p class="uppercase py-2 font-medium tracking-wide ">{{ skill.skillName }}</p>
+            <p class="skill-title uppercase py-3 font-medium tracking-wide ">{{ skill.skillName }}</p>
         </li>
     }
   </ul>
