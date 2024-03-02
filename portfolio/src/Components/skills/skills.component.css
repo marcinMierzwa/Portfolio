@@ -2,14 +2,3 @@
     font-size: clamp(0.7rem, 1.8vw, 1rem);
 }
 
-/* .skill-container::after{
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    inset: 1;
-} */
-
-.skill-container:hover>p {
-    transform: scale(100%);
-}

@@ -12,13 +12,20 @@ export const routes: Routes = [
 },
 {
     path: 'home',
-    // component: HomeComponent,
-    component: SkillsComponent,
+    component: HomeComponent,
 
 },
 {
 path: 'about',
 component: AboutComponent,
-}
+title: "About"
+},
+{
+path: 'skills',
+component: SkillsComponent,
+title: "Skills"
+},
+
+
 
 ];

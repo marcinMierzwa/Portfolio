@@ -1,8 +1,8 @@
 <div
-  class=""
+  class="h-full flex flex-col mt-20 sm:mt-0 sm:justify-center gap-6 lg:gap-12 px-10 sm:px-28"
 >
 
-  <div class="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
+  <div class="space-y-2">
     <h1
       class="subpage-main-heading inline-block font-medium xl:font-semibold leading-tight tracking-tight border-b-2 border-pink-700"
     >
@@ -15,18 +15,17 @@
   </div>
 
   <ul
-    class="w-full  bg-yellow-200 mx-auto "
+    class="w-full place-content-center grid grid-cols-2 sm:grid-cols-3 gap-y-4 sm:gap-4 lg:gap-10 sm:px-12 lg:px-22 2xl:px-44 mb-4"
   >
     @for(skill of skills$ | async; track skill.id ){
 
-      <div class="size-36 inline-block bg-slate-200 group">  
-      <li class="skill-container size-40 
-         shadow-md shadow-[#040c16] cursor-pointer  bg-teal-300 group-hover:scale-110 duration-500">
-            <!-- <img src="{{ skill.src }}" alt="technology logo" class="w-20 mx-auto  opacity-85 bg-blue-200"> -->
+      <li class="skill-container flex flex-col place-items-center group relative
+         before:absolute before:w-full before:h-full before:shadow-md before:shadow-[#040c16] before:hover:scale-110 before:hover:shadow-lg before:hover:shadow-black before:duration-500 ">
 
-            <p class=" bg-pink-300 leading-9">{{ skill.skillName }}</p>
+
+            <img src="{{ skill.src }}" alt="technology logo" class="size-10 sm:size-16 mt-4 opacity-85">
+            <p class="uppercase py-2 font-medium tracking-wide ">{{ skill.skillName }}</p>
         </li>
-      </div>
     }
   </ul>
 </div>
