@@ -1,7 +1,4 @@
-<div
-  class="h-full flex flex-col mt-20 sm:mt-0 sm:justify-center gap-8 lg:gap-12 py-2 px-10 sm:px-28"
->
-
+<div class="h-full w-full flex flex-col justify-center gap-16 px-10 sm:px-28">
   <div class="space-y-2">
     <h1
       class="subpage-main-heading inline-block font-medium xl:font-semibold leading-tight tracking-tight border-b-2 border-pink-700"
@@ -11,16 +8,6 @@
     <p class="subpage-sub-heading font-medium pe-5">
       Check out some of my recent work.
     </p>
-    
   </div>
-
-  <ul>
-    @for(project of projects$ | async; track project.id ){
-
-        <li class="w-[200px] h-[200px]" 
-        [ngStyle]="{'background': ' url(' + project.src  + ') no-repeat 0 0'}"
-        ></li>
-    }
-  </ul>
-
-
+  <app-swiper-slider [reciveProjects$]="projects$"> </app-swiper-slider>
+</div>

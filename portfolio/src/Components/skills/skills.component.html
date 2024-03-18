@@ -23,7 +23,7 @@
          before:absolute before:w-full before:h-full before:shadow-md before:shadow-[#040c16] before:hover:scale-105 before:hover:shadow-lg before:hover:shadow-black before:duration-500 ">
 
 
-            <img src="{{ skill.src }}" alt="technology logo" class="size-10 sm:size-16 mt-4 opacity-85">
+            <img [src]="skill.src" alt="technology logo" class="size-10 sm:size-16 mt-4 opacity-85">
             <p class="skill-title uppercase py-3 font-medium tracking-wide ">{{ skill.skillName }}</p>
         </li>
     }
