@@ -1,30 +1,37 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
-  Input,
+  inject,
   OnInit,
   signal,
 } from '@angular/core';
 import { Observable } from 'rxjs';
-// import function to register Swiper custom elements
 
 import { SwiperContainer } from 'swiper/element/bundle';
-import { Project } from '../../Services/data.service';
+import { DataService, Project } from '../../Services/data.service';
 import { CommonModule } from '@angular/common';
 import { SwiperOptions} from 'swiper/types';
+import { register as registerSwiperElements } from 'swiper/element/bundle';
+registerSwiperElements()
+
 
 
 @Component({
   selector: 'app-swiper-slider',
   standalone: true,
   imports: [CommonModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './swiper-slider.component.html',
   styleUrl: './swiper-slider.component.css',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+
 })
 export class SwiperSliderComponent implements OnInit {
 
-  @Input() reciveProjects$!: Observable<Project[]>;
+  data:DataService = inject(DataService);
+
+  projects$ = this.data.getProjects as Observable<Project[]>;
 
   swiperElement = signal<SwiperContainer | null>(null);
 
@@ -37,38 +44,36 @@ export class SwiperSliderComponent implements OnInit {
         shadow: true,
         slideShadows: true,
         shadowOffset: 60,
-        shadowScale: .8,
+        shadowScale: 0.8,
     },
     breakpoints: {
-      1023: {
+      0: {
         navigation: {
-          // hideOnClick: true,
-          enabled:false
-        }
+          enabled:false,
+        },
       },
-      1024: {
+      640: {
         navigation: {
-          // hideOnClick: true,
-          enabled:true
-        }
+          enabled:true,
+        },
       },
+      845: {
+        navigation: {
+          enabled:true,
+        },
 
+      }
 
     },
-    on: {
-      init() {
-        // ...
-      },
-    
-    }
+
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+
 
   }
-
-
-
-
-
-    
 
     Object.assign(swiperElementConstructor!, swiperOptions);
 

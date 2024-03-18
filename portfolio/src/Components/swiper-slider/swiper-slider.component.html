@@ -1,18 +1,16 @@
 <swiper-container
+  init="false"
   effect="cube"
-  speed="700"
   class="xl:mx-32 mx-auto"
-  navigation="true"
 >
-  @for(project of reciveProjects$ | async; track project.id){
+  @for(project of projects$ | async; track project.id){
 
-  <swiper-slide class="h-full flex flex-col gap-1" data-swiper-autoplay="3000">
+  <swiper-slide class="h-full flex flex-col gap-1">
     <img
       [src]="project.src"
       [alt]="project.projectName"
       class="h-[300px] lg:h-[350px] object-cover rounded-sm cursor-grab"
     />
-    <div class="swiper-lazy-preloader"></div>
     <div class="flex uppercase">
       <a
         class="mx-auto shadow-md shadow-[#040c16] p-3 xl:p-5 rounded-sm w-1/2 text-center font-semibold tracking-tight cursor-pointer xl:text-xl"
@@ -27,8 +25,6 @@
 
   }
 </swiper-container>
+<button class="swiper-button-prev">prev</button>
+<button class="swiper-button-next">next</button>
 
-<!-- breakpoints='{"640": {"navigation": "false"}}' -->
-<!-- loop="true"
-loopAddBlankSlides="true"
-loopPreventsSliding="true" -->

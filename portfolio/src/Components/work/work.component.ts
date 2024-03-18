@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
-import { DataService } from '../../Services/data.service';
+import { Component } from '@angular/core';
 import { SwiperSliderComponent } from "../swiper-slider/swiper-slider.component";
 
 
@@ -13,8 +12,5 @@ import { SwiperSliderComponent } from "../swiper-slider/swiper-slider.component"
 })
 export class WorkComponent {
 
-  data:DataService = inject(DataService)
-
-  projects$ = this.data.getProjects;
 
 }
