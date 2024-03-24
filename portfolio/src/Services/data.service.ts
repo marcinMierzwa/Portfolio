@@ -83,15 +83,15 @@ export class DataService {
       id: 1,
       projectName: 'Panel Wider',
       src: '/assets/projects/panel-wider 1300.jpg',
-      code: 'https://github.com/marcinMierzwa/Spreading-Window',
-      demo: 'marcinmierzwa.github.io/Spreading-Window/',
+      code: 'https://github.com/marcinMierzwa/Spreading-Window/',
+      demo: 'https://marcinmierzwa.github.io/Spreading-Window/',
     },
     {
       id: 2,
       projectName: 'Landing Page',
       src: '/assets/projects/landingPage 1300.jpg',
       code: 'https://github.com/marcinMierzwa/Landing-Page',
-      demo: 'marcinmierzwa.github.io/Landing-Page/',
+      demo: 'https:/marcinmierzwa.github.io/Landing-Page/',
     },
     {
       id: 3,
@@ -112,8 +112,9 @@ export class DataService {
       projectName: 'Virtal Drummer',
       src: '/assets/projects/virtual-drummer 1300.jpg',
       code: 'https://github.com/marcinMierzwa/Virtual-Drummer',
-      demo: 'marcinmierzwa.github.io/Virtual-Drummer/',
+      demo: 'https:/marcinmierzwa.github.io/Virtual-Drummer/',
     },
+
   ];
 
 

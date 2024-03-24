@@ -40,38 +40,21 @@ export class SwiperSliderComponent implements OnInit {
     const swiperElementConstructor = document.querySelector('swiper-container');
 
     const swiperOptions: SwiperOptions = {
+
+      effect: "cube",
       cubeEffect: {
         shadow: true,
         slideShadows: true,
-        shadowOffset: 60,
+        shadowOffset: 40,
         shadowScale: 0.8,
     },
-    breakpoints: {
-      0: {
-        navigation: {
-          enabled:false,
-        },
-      },
-      640: {
-        navigation: {
-          enabled:true,
-        },
-      },
-      845: {
-        navigation: {
-          enabled:true,
-        },
-
-      }
-
-    },
-
+    loop: true,
+    slidesPerView:1,
+    allowTouchMove: true,
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      prevEl: '#prev',
+      nextEl: '#next',
     },
-
-
 
   }
 
