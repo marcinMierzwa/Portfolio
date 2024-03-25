@@ -40,6 +40,9 @@ export class SwiperSliderComponent implements OnInit {
     const swiperElementConstructor = document.querySelector('swiper-container');
 
     const swiperOptions: SwiperOptions = {
+      slidesPerView: 'auto',
+      loop: true,
+      loopAddBlankSlides:true,
 
       effect: "cube",
       cubeEffect: {
@@ -48,8 +51,6 @@ export class SwiperSliderComponent implements OnInit {
         shadowOffset: 40,
         shadowScale: 0.8,
     },
-    loop: true,
-    slidesPerView:1,
     allowTouchMove: true,
     navigation: {
       prevEl: '#prev',
