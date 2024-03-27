@@ -1,0 +1,10 @@
+input:focus-visible, textarea:focus-visible {
+@apply
+outline-pink-600
+outline-1
+}
+
+input::placeholder, textarea::placeholder {
+@apply
+text-gray-400
+}
