@@ -41,7 +41,7 @@ export class SwiperSliderComponent implements OnInit {
 
     const swiperOptions: SwiperOptions = {
       slidesPerView: 'auto',
-      loop: true,
+      // loop: true,
       loopAddBlankSlides:true,
 
       effect: "cube",
