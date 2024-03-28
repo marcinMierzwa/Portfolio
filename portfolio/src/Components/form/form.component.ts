@@ -1,11 +1,12 @@
+import { CommonModule, NgClass } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule ,NgClass],
   templateUrl: './form.component.html',
   styleUrl: './form.component.css',
 })
@@ -13,13 +14,15 @@ export class FormComponent {
   private formBuilder = inject(FormBuilder);
 
   form: FormGroup = this.formBuilder.group({
-    name: '',
+    name: ['', [Validators.required, Validators.maxLength(100)]],
     toName: 'Admin',
-    email: '',
-    message: '',
+    email: ['', [Validators.required, Validators.email, Validators.maxLength(100)]],
+    message: ['', [Validators.required, Validators.maxLength(300)]],
   });
 
   async sendToDataBase() {
+
+
     emailjs.init('8mMToC4EjJyTILm_5');
 
     let response = await emailjs
@@ -33,10 +36,11 @@ export class FormComponent {
         alert('message has been sent succesfully!');
       },
       (error) => {
-        console.log('FAILED...', (error as EmailJSResponseStatus).text);
+        alert("Sorry :( but message cannot be sent, please try again later");
       });
-      
 
-    this.form.reset();
+      console.log(this.form.get('name'));
+      
+    // this.form.reset();
   }
 }

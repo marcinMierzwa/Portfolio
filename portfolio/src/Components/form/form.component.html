@@ -2,44 +2,61 @@
   <form
     action="javascript:void(0)"
     (submit)="sendToDataBase()"
-    class="flex flex-col md:w-2/3 gap-4 mx-auto p-6 rounded-lg bg-gradient-to-r from-stone-700 from-30% via-blue-400 to-pink-600 to-95% opacity-95 shadow-lg shadow-stone-800 border border-stone-700"
+    class="flex flex-col md:w-2/3 gap-2 mx-auto p-8 rounded-lg bg-gradient-to-r from-stone-700 from-30% via-blue-400 to-pink-600 to-95% opacity-95 shadow-lg shadow-stone-800 border border-stone-700"
   >
-    <div>
-      <input
+  <div class="min-h-20">
+    <input
         formControlName="name"
         type="text"
         name="name"
+        spellcheck="false"
         placeholder="Name"
+        [class.invalid]="form.get('name')?.invalid && (form.get('name')?.dirty || form.get('name')?.touched )"
         class="text-black bg-blue-50 w-full p-2 rounded-md"
       />
-      <p class="py-2 text-sm">The field can't be empty</p>
+      @if (form.get('name')?.hasError('required') && (form.get('name')?.dirty || form.get('name')?.touched)) {
+        <p class="py-2 text-sm text-red-300"
+        >Please write your name</p>
+      }
     </div>
 
-    <div>
+    <div class="min-h-20">
       <input
         formControlName="email"
         type="email"
         name="email"
+        [class.invalid]="form.get('email')?.invalid && (form.get('email')?.dirty || form.get('email')?.touched)"
         placeholder="Email"
         class="text-black bg-blue-50 w-full p-2 rounded-md"
       />
-      <p class="py-2 text-sm">The field can't be empty</p>
+      
+      @if (form.get('email')?.hasError('required') && (form.get('email')?.dirty || form.get('email')?.touched)) {
+      <p class="py-2 text-sm text-red-300"
+      >Please write your email correctly</p>
+      }
     </div>
 
-    <div>
+    <div class="min-h-24">
       <textarea
         formControlName="message"
         type="text"
         name="message"
+        spellcheck="false"
         placeholder="Message"
+        [class.invalid]="form.get('message')?.invalid && (form.get('message')?.dirty || form.get('message')?.touched)"
         class="text-black bg-blue-50 w-full p-2 rounded-md"
       ></textarea>
-      <p class="text-sm">The field can't be empty</p>
+      @if (form.get('message')?.hasError('required') && (form.get('message')?.dirty || form.get('message')?.touched)) {
+        <p class="pb-1 text-sm text-red-300"
+        >Please write your message</p>
+      }
     </div>
 
     <button
       type="submit"
-      class="text-white bg-[#13171a] hover:bg-[#050708]/80 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-3.5 text-center dark:hover:bg-black dark:focus:ring-gray-600 me-2 mb-2"
+      [disabled]="form.invalid"
+      [ngClass]="{'btn-disabled' : form.invalid}"
+      class="text-white bg-[#13171a] hover:bg-[#050708]/80 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-3.5 text-center dark:hover:bg-black dark:focus:ring-gray-600 me-2 my-3"
     >
       Let's Collaborate
     </button>
@@ -47,3 +64,5 @@
   </form>
 
 </div>
+
+
