@@ -1,4 +1,4 @@
-import { Injectable, Type } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 export type Work = { id: number; project: string; src: string; };

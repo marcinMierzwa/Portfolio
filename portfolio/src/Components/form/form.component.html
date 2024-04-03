@@ -1,4 +1,4 @@
-<div [formGroup]="form" class="w-full">
+<div [formGroup]="form" class="w-full relative">
   <form
     action="javascript:void(0)"
     (submit)="sendToDataBase()"
@@ -60,9 +60,21 @@
     >
       Let's Collaborate
     </button>
-
   </form>
 
+  <app-toaster 
+  [isToasterVisible] = "isFormSubmitted"
+  [isToasterErrorMessage] = "isFormSubmittedError"
+  [isToasterDelete]= "isToasterVisible()"
+      />
+
+  <!-- <button class="p-5 bg-black"
+  (click)="onClick()"
+  >click</button> -->
+
 </div>
+
+
+
 
 
