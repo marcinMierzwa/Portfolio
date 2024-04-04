@@ -26,6 +26,8 @@ export class FormComponent {
   isFormSubmitted = false;
   isFormSubmittedError = false;
   isToasterVisible = signal<boolean>(false);
+  isNumberChange = signal<number>(0);
+
 
   form: FormGroup = this.formBuilder.group({
     name: ['', [Validators.required, Validators.maxLength(100)]],
@@ -56,18 +58,20 @@ export class FormComponent {
         }
       )
       .then(
-        () => {
-      // this.isToasterVisible = this.contactService.getIsVisible;
-      // this.contactService.sendSignal();
-      console.log(this.contactService.foo());
+        () => { setTimeout(()=> {
+          this.isFormSubmitted = !this.isFormSubmitted
+        } ,3000)
+    
       
       
         })
     this.form.reset();
   }
 
-  // onClick() {
-  //   this.contactService.updateIsVisibleValue();
-  //   this.isToasterVisible = this.contactService.getIsVisible;
-  // }
+  onClick() {
+
+
+}
+
+
 }
