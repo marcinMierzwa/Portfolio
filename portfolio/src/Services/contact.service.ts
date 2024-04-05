@@ -1,49 +1,19 @@
 import { Injectable, signal } from '@angular/core';
+import { interval, take } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ContactService {
+  isFormSubmitedService = signal<boolean>(true);
 
-
-
-
-
-// changeValue(par:number){
-
-//   console.log(par);
-  
-
-// // return par * 2
-
-
- 
-// }
-
-
-// sendSignal(par:number) {
-
-//   setInterval( ()=> {this.changeValue(par) }, 2000);
-
-// }
-// isNumber = signal<number>(2);
-isNumber = 2;
-
-sendSignal() {
-
- setInterval(()=> this.getIsVisible, 2000)
-}
-
-getIsVisible(num:number) {
-  
-   this.isNumber = this.isNumber + num
-  // console.log(this.isNumber);
-  return this.isNumber;
-}
-
-
-
-
-
-
+  changeIsSubmitedStatus() {
+    interval(3000)
+      .pipe(take(1))
+      .subscribe((value) => {
+        if (value === 0) {
+          this.isFormSubmitedService.update((val: boolean) => (val = false));
+        }
+      });
+  }
 }

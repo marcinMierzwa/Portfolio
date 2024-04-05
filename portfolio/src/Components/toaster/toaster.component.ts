@@ -11,8 +11,6 @@ export class ToasterComponent {
 
 
   isToasterVisible = input<boolean>();
-  isToasterErrorMessage =input<boolean>();
-  isToasterDelete = input<boolean>();
   
 
 }

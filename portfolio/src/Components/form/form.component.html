@@ -63,20 +63,9 @@
   </form>
 
   <app-toaster 
-  [isToasterVisible] = "isFormSubmitted"
-  [isToasterErrorMessage] = "isFormSubmittedError"
-  [isToasterDelete]= "isToasterVisible()"
+  [isToasterVisible] = "isFormSubmited()"
+ 
       />
-
-  <button class="p-5 bg-black"
-  (click)="onClick()"
-  >click</button>
-
-  <p class="p-3 text-2xl">{{ isNumberChange() }}</p>
-
 </div>
-
-
-
 
 

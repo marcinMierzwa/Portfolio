@@ -23,10 +23,8 @@ export class FormComponent {
   private formBuilder = inject(FormBuilder);
   private contactService = inject(ContactService);
 
-  isFormSubmitted = false;
-  isFormSubmittedError = false;
-  isToasterVisible = signal<boolean>(false);
-  isNumberChange = signal<number>(0);
+  isFormSubmited = signal<boolean>(false);
+  // isToasterVisible = signal<boolean>(false);
 
 
   form: FormGroup = this.formBuilder.group({
@@ -51,27 +49,15 @@ export class FormComponent {
       })
       .then(
         () => {
-          this.isFormSubmitted = true;
+          this.isFormSubmited.update((value:boolean) => value = !value)
         },
-        (error) => {
-          this.isFormSubmittedError = true;
-        }
       )
       .then(
-        () => { setTimeout(()=> {
-          this.isFormSubmitted = !this.isFormSubmitted
-        } ,3000)
-    
-      
-      
-        })
+        () => {
+        this.contactService.changeIsSubmitedStatus();
+        this.isFormSubmited = this.contactService.isFormSubmitedService
+        },
+        )
     this.form.reset();
   }
-
-  onClick() {
-
-
-}
-
-
 }
