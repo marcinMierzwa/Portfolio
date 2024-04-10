@@ -24,7 +24,7 @@ export class FormComponent {
   private contactService = inject(ContactService);
 
   isFormSubmited = signal<boolean>(false);
-  // isToasterVisible = signal<boolean>(false);
+  isFormNotSubmited = signal<boolean>(false);
 
 
   form: FormGroup = this.formBuilder.group({
@@ -49,15 +49,14 @@ export class FormComponent {
       })
       .then(
         () => {
-          this.isFormSubmited.update((value:boolean) => value = !value)
+          this.isFormSubmited.update((value:boolean) => value = !value);
+          this.contactService.changeIsSubmitedStatus();
+          this.isFormSubmited = this.contactService.isFormSubmitedService;
+        },
+        (error) => {
+          this.isFormNotSubmited.update((value:boolean) => value = !value);
         },
       )
-      .then(
-        () => {
-        this.contactService.changeIsSubmitedStatus();
-        this.isFormSubmited = this.contactService.isFormSubmitedService
-        },
-        )
     this.form.reset();
   }
 }

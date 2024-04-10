@@ -8,7 +8,7 @@ export class ContactService {
   isFormSubmitedService = signal<boolean>(true);
 
   changeIsSubmitedStatus() {
-    interval(3000)
+    interval(8000)
       .pipe(take(1))
       .subscribe((value) => {
         if (value === 0) {
