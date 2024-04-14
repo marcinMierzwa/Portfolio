@@ -1,16 +1,66 @@
-<nav class="navigation flex justify-between items-center w-full px-2">
+<nav class="navigation flex justify-end items-center w-full px-2">
   <!-- logo -->
-  <div class="navigation-logo z-30 opacity-85 ms-2 xl:ms-3 mt-2">
-    <img class="h-10 md:h-12 cursor-pointer" routerLink="home" src="/assets/logoMobile.png" alt="logo" />
+  <div class="navigation-logo z-30 opacity-85 me-auto  xl:ms-3 mt-2">
+    <img
+      class="h-10 md:h-12 cursor-pointer ms-2"
+      routerLink="home"
+      src="/assets/logoMobile.png"
+      alt="logo"
+    />
   </div>
   <!-- desktop- -->
-  <div class="hidden sm:block z-30">
-    <ul class="navigation-list font-medium xl:text-lg tracking-wide flex">
-      <li><a class="link-desktop" routerLink="home">Home</a></li>
-      <li><a class="link-desktop" routerLink="about">About Me</a></li>
-      <li><a class="link-desktop" routerLink="skills">Skills</a></li>
-      <li><a class="link-desktop" routerLink="work">Work</a></li>
-      <li><a class="link-desktop" routerLink="contact">Contact</a></li>
+  <div class="hidden sm:block z-30 ">
+    <ul class="navigation-list w-full font-medium xl:text-lg tracking-wide flex justify-evenly">
+      <li
+      class="p-2 px-3"
+      routerLink = "home"
+      [routerLinkActive]="['active-link']"
+      [routerLinkActiveOptions]="{exact : true}"
+      (isActiveChange)="this.onRouterLinkActive($event)"
+      (click)="getLinkName($event)"
+      >Home</li>
+
+      <li
+      
+        class="p-2 px-3"
+            routerLink="about"
+          [routerLinkActive]="'active-link'"
+          [routerLinkActiveOptions]="{exact : true}"
+          (isActiveChange)="this.onRouterLinkActive($event)"
+          (click)="getLinkName($event)"
+          >About Me
+        
+      </li>
+
+      <li
+      class="p-2 px-3"
+      routerLink="skills"
+          [routerLinkActive]="'active-link'"
+          [routerLinkActiveOptions]="{exact : true}"
+          (isActiveChange)="this.onRouterLinkActive($event)"
+          (click)="getLinkName($event)"
+          >Skills
+        
+      </li>
+
+      <li>
+        <a
+          class="link-desktop"
+          routerLink="work"
+          [routerLinkActive]="'active-link'"
+          [routerLinkActiveOptions]="{exact : true}"
+          >Work</a
+        >
+      </li>
+      <li>
+        <a
+          class="link-desktop"
+          routerLink="contact"
+          [routerLinkActive]="'active-link'"
+          [routerLinkActiveOptions]="{exact : true}"
+          >Contact</a
+        >
+      </li>
     </ul>
   </div>
 
@@ -54,7 +104,6 @@
     </svg>
     }
   </div>
-
 </nav>
 
 <!-- mobile Nav -->
@@ -62,7 +111,10 @@
   class="flex flex-col justify-center items-center z-20 fixed bottom-0 right-0 h-full w-full bg-[#111]/[80%] sm:hidden text-[2rem] sm:text-[2.5rem] font-bold duration-500 ease-in-out"
   [ngClass]="isMobileView ? 'translate-x-[0]' : 'translate-x-[100%]'"
 >
-  <ul class="navigation-mobile flex flex-col justify-center items-center" (click)="toggleMobileView()">
+  <ul
+    class="navigation-mobile flex flex-col justify-center items-center"
+    (click)="toggleMobileView()"
+  >
     <li class="my-4">
       <a class="border-b-2 border-pink-500 pb-2" routerLink="home">Home</a>
     </li>
@@ -77,7 +129,9 @@
       <a class="border-b-2 border-pink-500 pb-2" routerLink="work">Work</a>
     </li>
     <li class="my-4">
-      <a class="border-b-2 border-pink-500 pb-2" routerLink="contact">Contact</a>
+      <a class="border-b-2 border-pink-500 pb-2" routerLink="contact"
+        >Contact</a
+      >
     </li>
   </ul>
   <div
@@ -97,3 +151,5 @@
     ></i>
   </div>
 </div>
+
+<!-- [class.link-desktop] = 'isRouterActiveLink' -->

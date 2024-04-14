@@ -7,6 +7,8 @@ export type Skill = { id: number; skillName: string; src: string; };
 
 export type Project = { id: number; projectName: string; src: string; code: string; demo: string };
 
+export type ActiveLink = { linkName:string, isActive:boolean};
+
 
 @Injectable({
   providedIn: 'root',
@@ -117,12 +119,41 @@ export class DataService {
 
   ];
 
+  private activeLinks: ActiveLink[] = [
+    {
+      linkName: 'home',
+      isActive: false
+    },
+    {
+      linkName: 'about me',
+      isActive: false
+    },
+    {
+      linkName: 'skills',
+      isActive: false
+    },
+    {
+      linkName: 'work',
+      isActive: false
+    },
+    {
+      linkName: 'contact',
+      isActive: false
+    },
+
+  ]
+
+
+  
+
 
   private work$ = of(this.work) as Observable<Work[]>;
 
   private skills$ = of(this.skills) as Observable<Skill[]>;
 
   private projects$ = of(this.projects) as Observable<Project[]>;
+
+  private activeLinks$ = of(this.activeLinks) as Observable<ActiveLink[]>;
 
   get getWork() {
     return this.work$;
@@ -135,4 +166,9 @@ export class DataService {
   get getProjects() {
     return this.projects$;
   }
+
+  get getActiveLinks() {
+    return this.activeLinks$;
+  }
+
 }
