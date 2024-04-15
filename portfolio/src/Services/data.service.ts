@@ -7,7 +7,7 @@ export type Skill = { id: number; skillName: string; src: string; };
 
 export type Project = { id: number; projectName: string; src: string; code: string; demo: string };
 
-export type ActiveLink = { linkName:string, isActive:boolean};
+export type ActiveLink = { linkName:string, isActiveLink:boolean, id:number};
 
 
 @Injectable({
@@ -122,23 +122,28 @@ export class DataService {
   private activeLinks: ActiveLink[] = [
     {
       linkName: 'home',
-      isActive: false
+      isActiveLink: false,
+      id: 0,
     },
     {
       linkName: 'about me',
-      isActive: false
+      isActiveLink: false,
+      id: 1,
     },
     {
       linkName: 'skills',
-      isActive: false
+      isActiveLink: false,
+      id: 2,
     },
     {
       linkName: 'work',
-      isActive: false
+      isActiveLink: false,
+      id: 3,
     },
     {
       linkName: 'contact',
-      isActive: false
+      isActiveLink: false,
+      id: 4,
     },
 
   ]
