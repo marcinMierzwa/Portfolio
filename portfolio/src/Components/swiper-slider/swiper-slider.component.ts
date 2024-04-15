@@ -40,9 +40,15 @@ export class SwiperSliderComponent implements OnInit {
     const swiperElementConstructor = document.querySelector('swiper-container');
 
     const swiperOptions: SwiperOptions = {
+
       slidesPerView: 'auto',
       // loop: true,
-      loopAddBlankSlides:true,
+      pagination: {
+        clickable: true,
+        // dynamicBullets: true,
+        bulletClass: 'swiper-pagination-bullet',
+      },
+
 
       effect: "cube",
       cubeEffect: {
