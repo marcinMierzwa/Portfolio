@@ -1,7 +1,7 @@
 <div class="relative w-full">
   <swiper-container
     init="false"
-    class="md:mx-20 lg:mx-40 xl:mx-60 2xl:mx-80 mx-auto"
+    class="swiper md:mx-20 lg:mx-40 xl:mx-60 2xl:mx-80 mx-auto relative"
   >
     @for(project of projects$ | async; track project.id){
 
@@ -37,6 +37,8 @@
     </swiper-slide>
     }
   </swiper-container>
+
+  <!-- --slider-buttons-- -->
 
   <div
     class="nav-slider w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 hidden lg:flex justify-between items-center lg:px-16 xl:px-24 2xl:px-40 group"
@@ -76,5 +78,3 @@
     </svg>
   </div>
 </div>
-
-
