@@ -18,6 +18,8 @@ register();
 })
 export class AppComponent implements OnInit {
 
+imageNumbers = [1, 2, 3, 4 ];
+
 swiperElement = signal<SwiperContainer |null>(null);
 
   ngOnInit(): void {
@@ -25,17 +27,20 @@ swiperElement = signal<SwiperContainer |null>(null);
     const swiperElementConstructor =document.querySelector('swiper-container');
 
     const swiperOptions: SwiperOptions = {
+      // loop: true,
+      slidesPerView: 1,
 
-      grabCursor:true,
-      cubeEffect:{
-        shadow: true,
-        slideShadows: true,
-        shadowOffset: 60,
-        shadowScale: 0.94,
-      },
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        // renderBullet: function (index, className) {
+        //   return '<span class="' + className + '">' + (index + 1) + '</span>';
+        // },
+
       },
   
 
@@ -45,7 +50,14 @@ swiperElement = signal<SwiperContainer |null>(null);
     Object.assign(swiperElementConstructor!, swiperOptions);
     this.swiperElement.set(swiperElementConstructor as SwiperContainer);
     this.swiperElement()?.initialize();
+
+
   }
 
 
 }
+
+// `<div class=${className}>
+//           <span class="number">${index + 1}</span>
+//           <span class="line"></span>
+//           </div>`

@@ -38,7 +38,7 @@ export class SwiperSliderComponent implements OnInit {
     const swiperOptions: SwiperOptions = {
 
       // loop: true,
-
+      
       effect: 'cube',
       cubeEffect: {
         shadow: true,
@@ -46,7 +46,6 @@ export class SwiperSliderComponent implements OnInit {
         shadowOffset: 40,
         shadowScale: 0.8,
       },
-      allowTouchMove: true,
       navigation: {
         prevEl: '#prev',
         nextEl: '#next',
@@ -56,9 +55,9 @@ export class SwiperSliderComponent implements OnInit {
         //   return '<span class="' + className + '">' + (index + 1) + '</span>';
         // },
         clickable: true,
-        dynamicBullets: true,
-        dynamicMainBullets: 2,
       },
+      
+
 
     };
     Object.assign(swiperElementConstructor!, swiperOptions);
@@ -67,7 +66,6 @@ export class SwiperSliderComponent implements OnInit {
 
     this.swiperElement()?.initialize();
 
-   
 
   }
 

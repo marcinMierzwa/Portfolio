@@ -65,7 +65,8 @@
   <div
     class="navigation-icon-container cursor-pointer relative z-30 text-[#f3f3f3] sm:hidden hover:scale-125 duration-200 transition-all ease-in-out"
     (click)="toggleMobileView()"
-  >
+    routerLink="home"
+    >
     <!-- hamburger -->
     @if(!isMobileView){
     <svg
@@ -105,33 +106,33 @@
 
 <!-- mobile Nav -->
 <div
-  class="flex flex-col justify-center items-center z-20 fixed bottom-0 right-0 h-full w-full bg-[#111]/[80%] sm:hidden text-[2rem] sm:text-[2.5rem] font-bold duration-500 ease-in-out"
-  [ngClass]="isMobileView ? 'translate-x-[0]' : 'translate-x-[100%]'"
->
-  <ul
-    class="navigation-mobile flex flex-col justify-center items-center"
-    (click)="toggleMobileView()"
+  class=" z-20 fixed top-1/2 left-0 -translate-y-1/2 h-[80%] w-[73%] bg-[#111]/[87%] sm:hidden text-[1.5rem] rounded-e-[30px]  font-bold duration-500 ease-in-out"
+  [ngClass]="isMobileView ? 'translate-x-[0]' : '-translate-x-[100%]'"
   >
-    <li class="my-4">
-      <a class="border-b-2 border-pink-500 pb-2" routerLink="home">Home</a>
+  <ul
+    class="navigation-mobile flex flex-col justify-center h-full ms-3"
+    (pointerleave)="toggleMobileView()"
+    >
+    <li class="my-2">
+      <a class="" routerLink="home">Home</a>
     </li>
-    <li class="my-4">
-      <a class="border-b-2 border-pink-500 pb-2" routerLink="about">About Me</a>
+    <li class="my-2">
+      <a class="" routerLink="about">About Me</a>
     </li>
-    <li class="my-4">
-      <a class="border-b-2 border-pink-500 pb-2" routerLink="skills">Skills</a>
+    <li class="my-2">
+      <a class="" routerLink="skills">Skills</a>
     </li>
 
-    <li class="my-4">
-      <a class="border-b-2 border-pink-500 pb-2" routerLink="work">Work</a>
+    <li class="my-2">
+      <a class="" routerLink="work">Work</a>
     </li>
-    <li class="my-4">
-      <a class="border-b-2 border-pink-500 pb-2" routerLink="contact"
+    <li class="my-2">
+      <a class="" routerLink="contact"
         >Contact</a
       >
     </li>
   </ul>
-  <div
+  <!-- <div
     class="z-20 w-3/4 grid grid-cols-2 justify-center items-center mt-6 bg-slate-500 opacity-80"
   >
     <i
@@ -146,7 +147,9 @@
     <i
       class="fa-brands fa-discord text-3xl text-center w-full border-b border-e py-3 text-pink-300"
     ></i>
-  </div>
+  </div> -->
 </div>
 
-<!-- [class.link-desktop] = 'isRouterActiveLink' -->
+<!-- (click)="toggleMobileView()" -->
+
+
