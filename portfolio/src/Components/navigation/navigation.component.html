@@ -3,7 +3,7 @@
   <div class="navigation-logo z-30 opacity-85 me-auto xl:ms-3 mt-2">
     <img
       class="h-10 md:h-12 cursor-pointer ms-2"
-      routerLink=""
+      routerLink="home"
       src="/assets/images/logoMobile.png"
       alt="logo"
     />
@@ -17,7 +17,7 @@
         class="p-2 px-3"
         [class.link-desktop]="!activeLinks[0].isActiveLink"
         [class.link-desktop]="!isActiveLinkOnInit"
-        routerLink=""
+        routerLink="home"
         [routerLinkActive]="['active-link']"
         [routerLinkActiveOptions]="{ exact: true }"
         (click)="getLinkName($event)"
@@ -123,7 +123,7 @@
     (pointerleave)="toggleMobileView()"
   >
     <li class="my-2">
-      <a class="" routerLink="">Home</a>
+      <a class="" routerLink="home">Home</a>
     </li>
     <li class="my-2">
       <a class="" routerLink="about">About Me</a>
