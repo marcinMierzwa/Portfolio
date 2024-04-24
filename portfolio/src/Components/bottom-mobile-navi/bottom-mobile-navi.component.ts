@@ -8,10 +8,4 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './bottom-mobile-navi.component.html',
   styleUrl: './bottom-mobile-navi.component.css'
 })
-export class BottomMobileNaviComponent {
-
-  onRouterLinkActive(isActive: boolean): void {
-
-  }
-
-}
+export class BottomMobileNaviComponent {}

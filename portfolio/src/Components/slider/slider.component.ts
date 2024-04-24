@@ -7,12 +7,10 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './slider.component.html',
-  styleUrl: './slider.component.css'
+  styleUrl: './slider.component.css',
 })
 export class SliderComponent {
+  data: DataService = inject(DataService);
 
-data:DataService = inject(DataService);
-
-work$ = this.data.getWork;
-
+  work$ = this.data.getWork;
 }

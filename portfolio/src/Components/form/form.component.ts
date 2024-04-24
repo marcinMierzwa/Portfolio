@@ -17,15 +17,12 @@ import { ContactService } from '../../Services/contact.service';
   styleUrl: './form.component.css',
   imports: [ReactiveFormsModule, NgClass, ToasterComponent],
 })
-
 export class FormComponent {
-
   private formBuilder = inject(FormBuilder);
   private contactService = inject(ContactService);
 
   isFormSubmited = signal<boolean>(false);
   isFormNotSubmited = signal<boolean>(false);
-
 
   form: FormGroup = this.formBuilder.group({
     name: ['', [Validators.required, Validators.maxLength(100)]],
@@ -49,14 +46,14 @@ export class FormComponent {
       })
       .then(
         () => {
-          this.isFormSubmited.update((value:boolean) => value = !value);
+          this.isFormSubmited.update((value: boolean) => (value = !value));
           this.contactService.changeIsSubmitedStatus();
           this.isFormSubmited = this.contactService.isFormSubmitedService;
         },
         (error) => {
-          this.isFormNotSubmited.update((value:boolean) => value = !value);
-        },
-      )
+          this.isFormNotSubmited.update((value: boolean) => (value = !value));
+        }
+      );
     this.form.reset();
   }
 }

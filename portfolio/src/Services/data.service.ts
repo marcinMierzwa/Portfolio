@@ -1,14 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
-export type Work = { id: number; project: string; src: string; };
+export type Work = { id: number; project: string; src: string };
 
-export type Skill = { id: number; skillName: string; src: string; };
+export type Skill = { id: number; skillName: string; src: string };
 
-export type Project = { id: number; projectName: string; src: string; code: string; demo: string };
+export type Project = {
+  id: number;
+  projectName: string;
+  src: string;
+  code: string;
+  demo: string;
+};
 
-export type ActiveLink = { linkName:string, isActiveLink:boolean, id:number};
-
+export type ActiveLink = {
+  linkName: string;
+  isActiveLink: boolean;
+  id: number;
+};
 
 @Injectable({
   providedIn: 'root',
@@ -92,31 +101,30 @@ export class DataService {
       id: 2,
       projectName: 'Landing Page',
       src: '/assets/projects/landingPage 1300.jpg',
-      code: 'https://github.com/marcinMierzwa/Landing-Page',
+      code: 'https://github.com/marcinMierzwa/Landing-Page/',
       demo: 'https:/marcinmierzwa.github.io/Landing-Page/',
     },
     {
       id: 3,
       projectName: 'Change Variables',
       src: '/assets/projects/change-variables 1300.jpg',
-      code: 'https://github.com/marcinMierzwa/Change-Variables-CSS-with-JS',
+      code: 'https://github.com/marcinMierzwa/Change-Variables-CSS-with-JS/',
       demo: 'https://marcinmierzwa.github.io/Change-Variables-CSS-with-JS/',
     },
     {
       id: 4,
       projectName: 'Portfolio',
       src: '/assets/projects/portfolio 1300.jpg',
-      code: 'https://github.com/marcinMierzwa/Change-Variables-CSS-with-JS',
+      code: 'https://github.com/marcinMierzwa/Change-Variables-CSS-with-JS/',
       demo: 'https://marcinmierzwa.github.io/Change-Variables-CSS-with-JS/',
     },
     {
       id: 5,
       projectName: 'Virtal Drummer',
       src: '/assets/projects/virtual-drummer 1300.jpg',
-      code: 'https://github.com/marcinMierzwa/Virtual-Drummer',
+      code: 'https://github.com/marcinMierzwa/Virtual-Drummer/',
       demo: 'https:/marcinmierzwa.github.io/Virtual-Drummer/',
     },
-
   ];
 
   private activeLinks: ActiveLink[] = [
@@ -145,12 +153,7 @@ export class DataService {
       isActiveLink: false,
       id: 4,
     },
-
-  ]
-
-
-  
-
+  ];
 
   private work$ = of(this.work) as Observable<Work[]>;
 
@@ -175,5 +178,4 @@ export class DataService {
   get getActiveLinks() {
     return this.activeLinks$;
   }
-
 }

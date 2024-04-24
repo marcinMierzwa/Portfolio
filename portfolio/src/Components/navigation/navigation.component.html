@@ -3,8 +3,8 @@
   <div class="navigation-logo z-30 opacity-85 me-auto xl:ms-3 mt-2">
     <img
       class="h-10 md:h-12 cursor-pointer ms-2"
-      routerLink="home"
-      src="/assets/logoMobile.png"
+      routerLink=""
+      src="/assets/images/logoMobile.png"
       alt="logo"
     />
   </div>
@@ -17,12 +17,14 @@
         class="p-2 px-3"
         [class.link-desktop]="!activeLinks[0].isActiveLink"
         [class.link-desktop]="!isActiveLinkOnInit"
-        routerLink="home"
+        routerLink=""
         [routerLinkActive]="['active-link']"
         [routerLinkActiveOptions]="{ exact: true }"
         (click)="getLinkName($event)"
         (isActiveChange)="this.onRouterLinkActive($event)"
-      >Home</li>
+      >
+        Home
+      </li>
 
       <li
         class="p-2 px-3"
@@ -31,7 +33,9 @@
         [routerLinkActive]="'active-link'"
         [routerLinkActiveOptions]="{ exact: true }"
         (click)="getLinkName($event)"
-      >About Me</li>
+      >
+        About Me
+      </li>
 
       <li
         class="p-2 px-3"
@@ -40,7 +44,9 @@
         [routerLinkActive]="'active-link'"
         [routerLinkActiveOptions]="{ exact: true }"
         (click)="getLinkName($event)"
-      >Skills</li>
+      >
+        Skills
+      </li>
 
       <li
         class="p-2 px-3"
@@ -49,7 +55,9 @@
         [routerLinkActive]="'active-link'"
         [routerLinkActiveOptions]="{ exact: true }"
         (click)="getLinkName($event)"
-      >Work</li>
+      >
+        Work
+      </li>
 
       <li
         class="p-2 px-3"
@@ -58,15 +66,16 @@
         [routerLinkActive]="'active-link'"
         [routerLinkActiveOptions]="{ exact: true }"
         (click)="getLinkName($event)"
-      >Contact</li>
-
+      >
+        Contact
+      </li>
     </ul>
   </div>
   <div
     class="navigation-icon-container cursor-pointer relative z-30 text-[#f3f3f3] sm:hidden hover:scale-125 duration-200 transition-all ease-in-out"
     (click)="toggleMobileView()"
     routerLink="home"
-    >
+  >
     <!-- hamburger -->
     @if(!isMobileView){
     <svg
@@ -106,15 +115,15 @@
 
 <!-- mobile Nav -->
 <div
-  class=" z-20 fixed top-1/2 left-0 -translate-y-1/2 h-[80%] w-[73%] bg-[#111]/[87%] sm:hidden text-[1.5rem] rounded-e-[30px]  font-bold duration-500 ease-in-out"
+  class="z-20 fixed top-1/2 left-0 -translate-y-1/2 h-[80%] w-[73%] bg-[#111]/[87%] sm:hidden text-[1.5rem] rounded-e-[30px] font-bold duration-500 ease-in-out"
   [ngClass]="isMobileView ? 'translate-x-[0]' : '-translate-x-[100%]'"
-  >
+>
   <ul
     class="navigation-mobile flex flex-col justify-center h-full ms-3"
     (pointerleave)="toggleMobileView()"
-    >
+  >
     <li class="my-2">
-      <a class="" routerLink="home">Home</a>
+      <a class="" routerLink="">Home</a>
     </li>
     <li class="my-2">
       <a class="" routerLink="about">About Me</a>
@@ -127,29 +136,7 @@
       <a class="" routerLink="work">Work</a>
     </li>
     <li class="my-2">
-      <a class="" routerLink="contact"
-        >Contact</a
-      >
+      <a class="" routerLink="contact">Contact</a>
     </li>
   </ul>
-  <!-- <div
-    class="z-20 w-3/4 grid grid-cols-2 justify-center items-center mt-6 bg-slate-500 opacity-80"
-  >
-    <i
-      class="fa-solid fa-envelope text-[30px] text-center w-full border py-3 text-pink-300"
-    ></i>
-    <i
-      class="fa-brands fa-github text-3xl text-center w-full border border-s-0 py-3 text-pink-300"
-    ></i>
-    <i
-      class="fa-brands fa-linkedin text-3xl text-center w-full border border-t-0 py-3 text-pink-300"
-    ></i>
-    <i
-      class="fa-brands fa-discord text-3xl text-center w-full border-b border-e py-3 text-pink-300"
-    ></i>
-  </div> -->
 </div>
-
-<!-- (click)="toggleMobileView()" -->
-
-

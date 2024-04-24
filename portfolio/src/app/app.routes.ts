@@ -10,31 +10,32 @@ export const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
-    title: 'Home',
   },
   {
-    path: 'home',
+    path: '',
     component: HomeComponent,
+    title: 'Marcin Mierzwa - Portfolio'
   },
   {
     path: 'about',
     component: AboutComponent,
-    title: 'About',
+    title: 'Marcin Mierzwa - About Me'
   },
   {
     path: 'skills',
     component: SkillsComponent,
-    title: 'Skills',
+    title: 'Marcin Mierzwa - Skills'
   },
   {
     path: 'work',
-    component: WorkComponent,
-    title: 'Work',
+    loadComponent:() => import('../Components/work/work.component')
+    .then(c => c.WorkComponent),
+    title: 'Marcin Mierzwa - Work'
   },
   {
     path: 'contact',
     component: ContactComponent,
-    title: 'Contact',
+    title: 'Marcin Mierzwa - Contact'
   },
 
 ];

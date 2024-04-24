@@ -13,5 +13,5 @@ import { BottomMobileNaviComponent } from "../Components/bottom-mobile-navi/bott
     imports: [CommonModule, RouterOutlet, NavigationComponent, FooterComponent, NavigationComponent, BottomMobileNaviComponent]
 })
 export class AppComponent {
-  title = 'portfolio';
+  title = 'Marcin Mierzwa - Portfolio';
 }

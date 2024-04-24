@@ -1,5 +1,4 @@
 import {
-  ChangeDetectionStrategy,
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
   inject,
@@ -22,10 +21,8 @@ registerSwiperElements();
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './swiper-slider.component.html',
   styleUrl: './swiper-slider.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SwiperSliderComponent implements OnInit {
-
   data: DataService = inject(DataService);
 
   projects$ = this.data.getProjects as Observable<Project[]>;
@@ -36,9 +33,6 @@ export class SwiperSliderComponent implements OnInit {
     const swiperElementConstructor = document.querySelector('.swiper');
 
     const swiperOptions: SwiperOptions = {
-
-      // loop: true,
-      
       effect: 'cube',
       cubeEffect: {
         shadow: true,
@@ -51,23 +45,14 @@ export class SwiperSliderComponent implements OnInit {
         nextEl: '#next',
       },
       pagination: {
-        // renderBullet: function(index, className) {
-        //   return '<span class="' + className + '">' + (index + 1) + '</span>';
-        // },
         clickable: true,
       },
-      
-
-
     };
+
     Object.assign(swiperElementConstructor!, swiperOptions);
 
     this.swiperElement.set(swiperElementConstructor as SwiperContainer);
 
     this.swiperElement()?.initialize();
-
-
   }
-
-
 }
