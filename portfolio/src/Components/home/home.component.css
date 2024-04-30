@@ -1,11 +1,11 @@
 .home-text {
-  font-size: clamp(1.1rem, 2.5vw, 2.5rem);
+  font-size: clamp(1.1rem, 2.2vw, 2.5rem);
 }
 .home-text-slider {
   font-size: clamp(1rem, 2vw, 1.5rem);
 }
 .home-font-heading {
-  font-size: clamp(2.7rem, 4vw, 5rem);
+  font-size: clamp(2.5rem, 3.5vw, 4rem);
 }
 .home-text-button-slider {
   font-size: clamp(0.8rem, 1.2vw, 1.2rem);
