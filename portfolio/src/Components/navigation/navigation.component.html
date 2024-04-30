@@ -16,7 +16,7 @@
       <li
         class="p-2 px-3"
         [class.link-desktop]="!activeLinks[0].isActiveLink"
-        [class.link-desktop]="!isActiveLinkOnInit"
+        [class.link-desktop]="isActiveLinkOnInit"
         routerLink="home"
         [routerLinkActive]="['active-link']"
         [routerLinkActiveOptions]="{ exact: true }"
@@ -29,10 +29,12 @@
       <li
         class="p-2 px-3"
         [class.link-desktop]="!activeLinks[1].isActiveLink"
+        [class.link-desktop]="isActiveLinkOnInit"
         routerLink="about"
-        [routerLinkActive]="'active-link'"
+        [routerLinkActive]="['active-link']"
         [routerLinkActiveOptions]="{ exact: true }"
         (click)="getLinkName($event)"
+        (isActiveChange)="this.onRouterLinkActive($event)"
       >
         About Me
       </li>
@@ -40,10 +42,12 @@
       <li
         class="p-2 px-3"
         [class.link-desktop]="!activeLinks[2].isActiveLink"
+        [class.link-desktop]="isActiveLinkOnInit"
         routerLink="skills"
         [routerLinkActive]="'active-link'"
         [routerLinkActiveOptions]="{ exact: true }"
         (click)="getLinkName($event)"
+        (isActiveChange)="this.onRouterLinkActive($event)"
       >
         Skills
       </li>
@@ -51,10 +55,12 @@
       <li
         class="p-2 px-3"
         [class.link-desktop]="!activeLinks[3].isActiveLink"
+        [class.link-desktop]="isActiveLinkOnInit"
         routerLink="work"
         [routerLinkActive]="'active-link'"
         [routerLinkActiveOptions]="{ exact: true }"
         (click)="getLinkName($event)"
+        (isActiveChange)="this.onRouterLinkActive($event)"
       >
         Work
       </li>
@@ -66,6 +72,7 @@
         [routerLinkActive]="'active-link'"
         [routerLinkActiveOptions]="{ exact: true }"
         (click)="getLinkName($event)"
+        (isActiveChange)="this.onRouterLinkActive($event)"
       >
         Contact
       </li>
